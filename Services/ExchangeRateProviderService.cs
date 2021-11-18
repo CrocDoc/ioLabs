@@ -23,10 +23,7 @@ namespace ExchangeRateUpdater
 
             var deserializedResult = ExchangeRateDeserializer.DeserializeCNBExchangeRateString(cnbResult);
 
-            var result = deserializedResult.Intersect(currencies);
-
-
-            return result;
+            return deserializedResult;
         }
 
         private async Task<string> SendGetExchangeRatesRequestAsync(string url)
